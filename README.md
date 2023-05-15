@@ -1,4 +1,4 @@
-# Berlin Noise Dataset
+# 🔊 Berlin Noise Dataset
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
