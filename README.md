@@ -4,6 +4,8 @@
 
 A collection of noise recordings in Berlin and other places.
 
+This dataset of the TU-Berlin may also be of interest: [DNC: Dataset for Noise Classification](https://depositonce.tu-berlin.de/items/aa9f01e1-3eb7-44f9-a5c8-fe1b4c858024)
+
 ## License
 
 This dataset (recordings, metadata and website) is licensed under the
