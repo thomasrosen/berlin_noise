@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "main": "build.js",
+  "dependencies": {
+    "yaml": "^2.2.2"
+  }
+}

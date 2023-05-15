@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>🔊 Berlin Noise Dataset</title>
+    <meta charset="utf-8">
+    <meta name="description" content="A collection of noise recordings in Berlin and other places.">
+    <meta name="author" content="Thomas Rosen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      :root {
+        --content-box-width: 640px;
+
+        --text-color: #150006;
+        --background-color: #f2f2f2;
+        --surface-color: #fff;
+        --primary-color: #e4001f;
+        --on-primary-color: #fff;
+        --border-color: #150006;
+      }
+      /*
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-color: #ffffff;
+          --background-color: #150006;
+          --surface-color: #150006;
+          --primary-color: #ff005d;
+          --border-color: #fff;
+        }
+      }
+      */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: Ubuntu, sans-serif;
+        font-size: 18px;
+        letter-spacing: .5px;
+        line-height: 1.2;
+        color: var(--text-color);
+        background-color: var(--background-color);
+
+        padding: 32px;
+      }
+      main {
+        width: var(--content-box-width);
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 32px;
+        background-color: var(--surface-color);
+        box-shadow: 0 0 0 2px var(--border-color);
+      }
+      h1 {
+        font-weight: 700;
+        font-size: 48px;
+        letter-spacing: -1.5px;
+        line-height: 1.2;
+        color: var(--primary-color);
+
+        margin-block-end: 32px;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 32px;
+        margin-block-start: 32px;
+        margin-block-end: 16px;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 24px;
+        margin-block-start: 32px;
+        margin-block-end: 16px;
+      }
+      p {
+        margin-block-end: 16px;
+      }
+      code {
+        font-family: "Ubuntu Mono", monospace;
+      }
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      button {
+        border: 2px solid var(--border-color);
+        color: var(--text-color);
+        background: var(--surface-color);
+        font-weight: bold;
+        font-family: inherit;
+        padding: 8px 16px;
+        margin-block-end: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        color: var(--on-primary-color);
+        background: var(--primary-color);
+      }
+
+      ul li {
+        margin-inline-start: 20px;
+        margin-block-start: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>🔊 Berlin Noise Dataset</h1>
+
+      <p>
+        <strong>A collection of city-noise recordings of Berlin and other places.</strong>
+      </p>
+
+      <a href="https://github.com/thomasrosen/berlin_noise/archive/refs/heads/main.zip">
+        <button>Download</button>
+      </a>
+
+      <p>
+        The audio recordings are collected by <a href="https://thomasrosen.me">Thomas Rosen</a> and are stored at <a href="https://github.com/thomasrosen/berlin_noise/">github.com/thomasrosen/berlin_noise</a>.
+      </p>
+      <p>
+        The name is a wordplay on "Perlin Noise" and the city-name "Berlin", where the project started. This project is not affiliated with the city of Berlin.
+      </p>
+
+      <p>
+        Contact: <a href="mailto:hello@thomasrosen.me">hello@thomasrosen.me</a>
+      </p>
+
+      <h2>About the dataset</h2>
+
+      <p>
+        The dataset contains recordings of city-noise in Berlin and other places. I regulary update the <a href="https://github.com/thomasrosen/berlin_noise/">repository</a> with more recordings.
+      </p>
+
+      <!--recording_metadata-->
+
+      <h2>License</h2>
+
+      <p>This dataset (recordings, metadata and website) is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+
+      <p>You can use the recordings for any purpose, as long as you give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</p>
+
+      <p>You can use the following text to give appropriate credit:</p>
+
+      <code>Berlin Noise by Thomas Rosen is licensed under CC BY 4.0</code>
+    </main>
+  </body>
+</html>
