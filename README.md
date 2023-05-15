@@ -8,7 +8,7 @@ This dataset of the TU-Berlin may also be of interest: [DNC: Dataset for Noise C
 
 ## License
 
-This dataset (recordings, metadata and website) is licensed under the
+This dataset (recordings + metadata) is licensed under the
 [Creative Commons Attribution 4.0 International License][cc-by].
 
 You can use the recordings for any purpose, as long as you give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
