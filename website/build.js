@@ -6,19 +6,25 @@ function getsec(time) {
   return (+arr[0]) * 3600 + (+arr[1]) * 60 + (+arr[2]);
 }
 
-function load_data() {
-  const file = fs.readFileSync('../metadata.yml', 'utf8')
-  let data = YAML.parse(file)
+function load_metadata_from_files() {
+  const files = fs.readdirSync('../metadata')
 
-  data = data.metadata.map((item) => {
-    item.what = (item?.what || '').split(',').map((w) => w.trim())
-    item.length = getsec(item.length)
-    return item
-  })
+  const metadata_files = files
+    .filter((file) => file.endsWith('.yml'))
+    .map((file) => {
+      try {
+        const file_content = fs.readFileSync(`../metadata/${file}`, 'utf8')
+        const { metadata } = YAML.parse(file_content)
+        metadata.what = (metadata?.what || '').split(',').map((w) => w.trim())
+        metadata.length = getsec('00:' + metadata?.length)
+        return metadata
+      } catch (e) {
+        return null
+      }
+    })
+    .filter(Boolean)
 
-  console.info('✅ loaded metadata.yml')
-
-  return data
+  return metadata_files
 }
 
 function save_new_index_html(recording_metadata_html) {
@@ -40,7 +46,7 @@ function save_new_index_html(recording_metadata_html) {
 function create_metadata_html() {
   console.info('✅ started build.js')
 
-  const data = load_data()
+  const data = load_metadata_from_files()
 
   const amount_of_recordings = data.length
 
