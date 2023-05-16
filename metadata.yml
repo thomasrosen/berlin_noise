@@ -15,3 +15,11 @@ metadata:
     latitude: 52.390679
     longitude: 13.121611
     altitude: 20
+- name: N3 Kieser Training.m4a
+  length: 02:01.00
+  timestamp: 2023-05-16T10:06:07Z
+  what: outside, construction site, cars, wind, street
+  geolocation:
+    latitude: 52.390679
+    longitude: 13.121611
+    altitude: 20
