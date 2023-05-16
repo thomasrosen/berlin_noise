@@ -24,6 +24,8 @@ function load_metadata_from_files() {
     })
     .filter(Boolean)
 
+  console.info('✅ loaded metadata.yml')
+
   return metadata_files
 }
 
