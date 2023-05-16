@@ -1,17 +1,17 @@
 metadata:
 - name: Noise 1 Wald.m4a
-  length: 0:01:46.00
-  timestamp: 2019-08-11T15:00:00.000Z
-  what: forest, birds, highway
+  length: 01:46.00
+  timestamp: 2023-05-14T18:06:52Z
+  what: outside, forest, birds, highway
   geolocation:
     latitude: 52.389884
     longitude: 13.139709
-    altitude: 45.0
+    altitude: 45
 - name: Noise 2 August-Bebel-Straße.m4a
-  length: 0:03:02.00
-  timestamp: 2019-08-11T15:00:00.000Z
-  what: cars, bikes, birds, street
+  length: 03:02.00
+  timestamp: 2023-05-15T13:41:18Z
+  what: outside, cars, bikes, birds, street
   geolocation:
     latitude: 52.390679
     longitude: 13.121611
-    altitude: 45.0
+    altitude: 20
