@@ -98,7 +98,7 @@ function create_metadata_html() {
     </p>
     <ul class="tag_cloud">
       ${what_tags_metadata.map((item) => `
-        <li title="${item.tag}: ${item.amount} recordings and ${item.length_sum_percent}%">
+        <li title="${item.tag}: ${item.amount} ${item.amount === 1 ? 'recording' : 'recordings'} and ${item.length_sum_percent}%">
           <strong>${item.tag}</strong> ${item.amount}
         </li>
       `).join('')}
