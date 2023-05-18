@@ -60,10 +60,13 @@ function create_metadata_html() {
 
   const what_tags_metadata = what_tags
   .map((tag) => {
+    const items_with_tag = data.filter((item) => item.what.includes(tag))
+
+    const amount_of_recordings_with_tag = items_with_tag.length
+
     const length_sum_percent = Math.round(
       (
-        data
-        .filter((item) => item.what.includes(tag))
+        items_with_tag
         .reduce((acc, item) => acc + item.length, 0)
       ) / sum_length_of_all_recordings * 100
     )
@@ -71,8 +74,10 @@ function create_metadata_html() {
     return {
       tag,
       length_sum_percent,
+      amount: amount_of_recordings_with_tag,
     }
   })
+    .sort((a, b) => b.amount - a.amount)
 
   // length of the recording in seconds and minutes
   const hours = Math.floor(sum_length_of_all_recordings / 60 / 60)
@@ -88,10 +93,10 @@ function create_metadata_html() {
     <p>
       Each entry has some tags. Here is an overview of these tags. In each row: the tag and how much of the dataset is tagged with it.
     </p>
-    <ul>
+    <ul class="tag_cloud">
       ${what_tags_metadata.map((item) => `
-        <li>
-          <strong>${item.tag}</strong>: ${item.length_sum_percent}%
+        <li title="${item.tag}: ${item.amount} recordings and ${item.length_sum_percent}%">
+          <strong>${item.tag}</strong> ${item.amount}
         </li>
       `).join('')}
     </ul>
