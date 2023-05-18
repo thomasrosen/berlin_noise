@@ -33,6 +33,9 @@ function save_new_index_html(recording_metadata_html) {
 
   let template_html = fs.readFileSync('./template.html', 'utf8')
 
+  const current_year = new Date().getFullYear()
+  template_html = template_html.replace('<!--current_year-->', current_year)
+
   template_html = template_html.replace('<!--recording_metadata-->', recording_metadata_html)
 
   // check if build folder exists
