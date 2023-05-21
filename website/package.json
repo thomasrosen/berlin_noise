@@ -2,6 +2,7 @@
   "type": "module",
   "main": "build.js",
   "dependencies": {
+    "geojson-to-svg": "^1.1.4",
     "yaml": "^2.2.2"
   }
 }

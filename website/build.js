@@ -1,6 +1,8 @@
 import fs from 'fs'
 import YAML from 'yaml'
 
+import render_map from './render_map.js'
+
 function getsec(time) {
   const arr = time.split(':');
   return (+arr[0]) * 3600 + (+arr[1]) * 60 + (+arr[2]);
@@ -53,6 +55,11 @@ function create_metadata_html() {
 
   const data = load_metadata_from_files()
 
+  const points = data.map((item) => ({
+    latitude: item.geolocation.latitude,
+    longitude: item.geolocation.longitude,
+  }))
+
   const amount_of_recordings = data.length
 
   const what_tags = [...new Set(data.flatMap(item => item.what))]
@@ -80,6 +87,7 @@ function create_metadata_html() {
       amount: amount_of_recordings_with_tag,
     }
   })
+    .filter((item) => item.amount > 1)
     .sort((a, b) => b.amount - a.amount)
 
   // length of the recording in seconds and minutes
@@ -88,13 +96,15 @@ function create_metadata_html() {
   const seconds = (sum_length_of_all_recordings % 60).toFixed(2)
   const length_of_recordings_as_text = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0') } (${sum_length_of_all_recordings} seconds)`
 
+  const svg_map = render_map(points)
+
   const html = `
     <p><strong>Amount of recordings</strong>: ${amount_of_recordings}</p>
     <p><strong>Sum length of all recordings</strong>: ${length_of_recordings_as_text}</p>
 
     <h3>Whats in the dataset?</h3>
     <p>
-      Each entry has some tags. Here is an overview of these tags. In each row: the tag and how much of the dataset is tagged with it.
+      Each entry has some tags. Here is an overview of these tags. In each row: the tag and how much of the dataset is tagged with it. Only tags with more than one recording are shown.
     </p>
     <ul class="tag_cloud">
       ${what_tags_metadata.map((item) => `
@@ -103,6 +113,11 @@ function create_metadata_html() {
         </li>
       `).join('')}
     </ul>
+    <h3>Map of the recordings</h3>
+    <p>
+      Red = Recording / Black = Berlin / Grey = Potsdam
+    </p>
+    ${svg_map}
   `
 
   console.info('✅ HTML generated')
