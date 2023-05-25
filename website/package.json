@@ -2,7 +2,11 @@
   "type": "module",
   "main": "build.js",
   "dependencies": {
+    "@turf/polygonize": "^6.5.0",
+    "@turf/turf": "^6.5.0",
     "geojson-to-svg": "^1.1.4",
+    "geolib": "^3.3.3",
+    "node-fetch": "^3.3.1",
     "yaml": "^2.2.2"
   }
 }
