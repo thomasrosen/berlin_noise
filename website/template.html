@@ -127,6 +127,39 @@
         padding-inline-start: 10px;
         margin-inline-start: 10px;
       }
+
+      .hours_graph {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+        height: 115px;
+        padding-block-end: 15px;
+      }
+      .hours_graph .hours_graph__bar {
+        background: red;
+        position: relative;
+        width: 100%;
+      }
+      .hours_graph .hours_graph__bar__hour,
+      .hours_graph .hours_graph__bar__amount {
+        font-size: 8px;
+        position: absolute;
+        right: 0;
+        left: 0;
+        text-align: center;
+        height: 10px;
+        line-height: 10px;
+      }
+      .hours_graph .hours_graph__bar__hour {
+        bottom: -15px;
+      }
+      .hours_graph .hours_graph__bar__amount {
+        top: 5px;
+        font-weight: bold;
+        color: white;
+      }
     </style>
   </head>
   <body>
