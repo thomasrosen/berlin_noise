@@ -145,7 +145,14 @@ function create_metadata_html() {
   const hours = Math.floor(sum_length_of_all_recordings / 60 / 60)
   const minutes = Math.floor(sum_length_of_all_recordings / 60) - hours * 60
   const seconds = (sum_length_of_all_recordings % 60).toFixed(2)
-  const length_of_recordings_as_text = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0') } (${sum_length_of_all_recordings} seconds)`
+  const length_of_recordings_as_text = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0') } <small>(${sum_length_of_all_recordings} seconds)</small>`
+
+
+  const avg_full_seconds = Math.round(sum_length_of_all_recordings / amount_of_recordings)
+  const avg_minutes = Math.floor(avg_full_seconds / 60)
+  const avg_seconds = (avg_full_seconds % 60).toFixed(2)
+
+  const average_length_of_a_recording_as_string = `${String(avg_minutes).padStart(2, '0')}:${String(avg_seconds).padStart(2, '0')} <small>(${avg_full_seconds} seconds)</small>`
 
   const svg_map = render_map(points)
   const hours_graph = render_hours_graph(all_metadata)
@@ -153,6 +160,7 @@ function create_metadata_html() {
   const html = `
     <p><strong>Amount of recordings</strong>: ${amount_of_recordings}</p>
     <p><strong>Sum length of all recordings</strong>: ${length_of_recordings_as_text}</p>
+    <p><strong>Average length of a recording</strong>: ${average_length_of_a_recording_as_string}</p>
 
     <h3>Whats in the dataset?</h3>
     <p>
