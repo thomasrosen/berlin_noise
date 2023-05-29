@@ -2,9 +2,10 @@
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 
-A collection of noise recordings in Berlin and other places.
+A collection of noise recordings in and around Berlin.
 
-This dataset of the TU-Berlin may also be of interest: [DNC: Dataset for Noise Classification](https://depositonce.tu-berlin.de/items/aa9f01e1-3eb7-44f9-a5c8-fe1b4c858024)
+Each audio recording has tags of what can be heard, the time, location and altitude.<br />
+More information, use-cases, related datasets and bibtex can be found on the website: <https://berlinnoise.thomasrosen.me/>
 
 ## License
 
